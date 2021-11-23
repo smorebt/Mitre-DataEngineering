@@ -1,12 +1,17 @@
-default:
+finhub-redshift:
   target: dev
   outputs:
     dev:
-      type: postgres
-      host: postgres-dbt
-      user: dbtuser
-      pass: pssd
-      port: 5432
-      dbname: dbtdb
-      schema: dbt
+      type: redshift
+      host: redshift-resource-stack-redshiftcluster-1hrzlvlmmvzl3.cctn7q9cbcgg.us-gov-west-1.redshift.amazonaws.com
+      user: ghtwalinje
+      password: 
+      port: 5439
+      dbname: finhub_redshift
+      schema: finhub_redshift
       threads: 4
+      keepalives_idle: 0 # default 0, indicating the system default
+      connect_timeout: 10 # default 10 seconds
+      # search_path: public # optional, not recommended
+      sslmode: [optional, set the sslmode used to connect to the database (in case this parameter is set, will look for ca in ~/.postgresql/root.crt)]
+      ra3: true # enables cross-database sources
