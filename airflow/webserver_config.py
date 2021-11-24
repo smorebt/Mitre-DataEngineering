@@ -67,7 +67,7 @@ AUTH_USER_REGISTRATION = True
 # MAIL_DEFAULT_SENDER = 'sender@gmail.com'
 
 # The default user self registration role
-# AUTH_USER_REGISTRATION_ROLE = "Public"
+AUTH_USER_REGISTRATION_ROLE = "Public"
 
 # When using OAuth Auth, uncomment to setup provider(s) info
 # Google OAuth example:
